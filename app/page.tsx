@@ -383,13 +383,24 @@ export default function HomePage() {
               Open to senior and lead UX roles in the Gulf, India, Singapore, and remote, particularly enterprise SaaS,
               fintech, government, and regulated industries. Usually responds within 24 hours.
             </p>
+            {/* Email — shown inline so visitors can copy it directly */}
+            <p className="text-sm mb-6" style={{ color: "var(--text-secondary)" }}>
+              Drop me a line at{" "}
+              <a href="mailto:ali050786@gmail.com" className="font-mono hover:underline" style={{ color: "var(--accent)" }}>
+                ali050786@gmail.com
+              </a>
+              {" "}and I'll get back to you within 24 hours.
+            </p>
             <div className="flex flex-wrap gap-4 relative z-10">
               <a
                 href="mailto:ali050786@gmail.com"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold font-mono uppercase tracking-wider transition-all duration-300 hover:scale-[1.03]"
                 style={{ background: "var(--accent)", color: "#000" }}
               >
-                Email me
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+                Send email
               </a>
               <a
                 href="https://www.linkedin.com/in/sikandar-ux"
