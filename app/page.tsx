@@ -84,41 +84,48 @@ const services = [
 export default function HomePage() {
   return (
     <>
-      {/* ── Hero ─────────────────────────────────────────── */}
-      <section className="max-w-[960px] mx-auto px-6 pt-20 pb-24" style={{
-        background: "radial-gradient(ellipse 800px 500px at 10% 80%, color-mix(in srgb, var(--accent) 5%, transparent) 0%, transparent 70%)",
-      }}>
-        <p className="text-[10px] font-mono tracking-[0.3em] uppercase mb-6" style={{ color: "var(--accent)" }}>
-          Open to Gulf · India · Singapore · Remote · 2026
-        </p>
+      {/* Ambient background mesh spots */}
+      <div className="ambient-bg" aria-hidden="true">
+        <div className="relative max-w-[1400px] mx-auto h-full overflow-visible">
+          <div className="ambient-blob blob-1" />
+          <div className="ambient-blob blob-2" />
+        </div>
+      </div>
 
-        <h1 className="text-4xl sm:text-5xl font-bold leading-[1.05] tracking-[-0.03em] mb-3" style={{ color: "var(--text-primary)" }}>
+      {/* ── Hero ─────────────────────────────────────────── */}
+      <section className="max-w-[920px] mx-auto px-6 pt-16 pb-20 relative">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border bg-[var(--bg-surface)] text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.15em] mb-8 shadow-sm" style={{ borderColor: "var(--border)" }}>
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="text-[var(--text-secondary)]">Open to Gulf · India · Singapore · Remote · 2026</span>
+        </div>
+
+        <h1 className="text-4xl sm:text-7xl font-serif font-bold leading-[1.05] tracking-[-0.03em] mb-4 text-[var(--text-primary)]">
           Sikandar Ali Abdul
         </h1>
 
-        <h2 className="text-2xl sm:text-3xl font-bold leading-[1.15] tracking-[-0.02em] mb-6" style={{ color: "var(--text-primary)" }}>
-          <span className="font-semibold tracking-tight" style={{ color: "var(--accent)" }}>Senior UX Designer</span>{" "}
-          <span style={{ color: "var(--text-secondary)" }}>who designs enterprise systems and builds AI products.</span>
+        <h2 className="text-2xl sm:text-4xl font-light leading-[1.25] tracking-tight mb-8 text-[var(--text-secondary)]">
+          <span className="font-serif font-bold text-[var(--accent)]">Senior UX Designer</span>{" "}
+          who designs enterprise systems and builds AI products.
         </h2>
 
-        <p className="text-base leading-[1.85] mb-10 max-w-[580px]" style={{ color: "var(--text-secondary)" }}>
+        <p className="text-base sm:text-lg leading-[1.8] mb-12 max-w-[660px] text-[var(--text-secondary)]">
           11 years architecting complex B2B platforms, government civic systems, and consumer products at scale,
           across the US, UAE, and India. Currently open to senior and lead UX roles. I use AI to move faster.
           I build design systems that make teams faster. I design for users who can't afford errors.
         </p>
 
-        <div className="flex flex-wrap gap-3 mb-8">
+        <div className="flex flex-wrap gap-4">
           <a
             href="#work"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200"
-            style={{ background: "var(--text-primary)", color: "var(--bg-base)" }}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold font-mono uppercase tracking-wider transition-all duration-300 hover:scale-[1.03] shadow-md"
+            style={{ background: "var(--accent)", color: "#000" }}
           >
             See my work ↓
           </a>
           <a
             href="mailto:ali050786@gmail.com"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200"
-            style={{ border: "1px solid var(--border)", color: "var(--text-secondary)" }}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold font-mono uppercase tracking-wider transition-all duration-300 hover:scale-[1.03] border hover:bg-[var(--bg-surface)] text-[var(--text-primary)]"
+            style={{ borderColor: "var(--border)" }}
           >
             Get in touch
           </a>
@@ -126,98 +133,109 @@ export default function HomePage() {
       </section>
 
       {/* ── Case Studies ─────────────────────────────────── */}
-      <section id="work" className="max-w-[960px] mx-auto px-6 pb-20">
-        <div className="pt-16 mb-10" style={{ borderTop: "1px solid var(--border)" }}>
-          <p className="text-[10px] font-mono tracking-[0.3em] uppercase mb-2" style={{ color: "var(--text-muted)" }}>
+      <section id="work" className="max-w-[920px] mx-auto px-6 pb-24">
+        <div className="pt-20 mb-12 border-t" style={{ borderColor: "var(--border)" }}>
+          <p className="text-[10px] font-mono tracking-[0.3em] uppercase mb-3 text-[var(--text-muted)]">
             Selected Work
           </p>
-          <h2 className="text-2xl font-bold tracking-[-0.02em]" style={{ color: "var(--text-primary)" }}>
+          <h2 className="text-2xl sm:text-4xl font-serif font-bold tracking-tight text-[var(--text-primary)]">
             11 years. Four industries.{" "}
-            <span className="font-semibold tracking-tight" style={{ color: "var(--accent)" }}>One consistent thread.</span>
+            <span className="font-bold text-[var(--accent)]">One consistent thread.</span>
           </h2>
         </div>
 
-        <div className="flex flex-col gap-4">
-          {caseStudies.map((cs) => (
-            <Link
-              key={cs.slug}
-              href={`/case-study/${cs.slug}`}
-              className="group block rounded-xl overflow-hidden transition-all duration-200 hover:bg-[var(--bg-elevated)]"
-              style={{ background: "var(--bg-surface)", border: "1px solid var(--border)" }}
-            >
-              {/* Thumbnail: only shown when thumb is set */}
-              {cs.thumb && (
-                <div className="w-full overflow-hidden" style={{ borderBottom: "1px solid var(--border)" }}>
-                  <Image
-                    src={cs.thumb}
-                    alt={cs.title}
-                    width={1969}
-                    height={2600}
-                    className="w-full h-52 object-cover"
-                    style={{ objectPosition: cs.thumbPos ?? "center top" }}
-                  />
-                </div>
-              )}
-
-              <div className="p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <p className="text-[10px] font-mono tracking-[0.2em] uppercase" style={{ color: "var(--accent)" }}>
-                  {cs.eyebrow}
-                </p>
-                {cs.active && (
-                  <span className="text-[9px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ background: "color-mix(in srgb, var(--accent) 12%, transparent)", color: "var(--accent)", border: "1px solid color-mix(in srgb, var(--accent) 25%, transparent)" }}>
-                    Active
-                  </span>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {caseStudies.map((cs) => {
+            const isFullWidth = cs.active;
+            return (
+              <Link
+                key={cs.slug}
+                href={`/case-study/${cs.slug}`}
+                className={`group block rounded-2xl overflow-hidden glass-card transition-all duration-300 ${isFullWidth ? "md:col-span-2 flex flex-col md:flex-row items-stretch" : "flex flex-col"
+                  }`}
+              >
+                {/* Thumbnail */}
+                {cs.thumb && (
+                  <div className={`overflow-hidden relative border-b md:border-b-0 ${isFullWidth ? "w-full md:w-1/2 min-h-[260px]" : "w-full h-56"
+                    }`} style={{ borderColor: "var(--border)" }}>
+                    <Image
+                      src={cs.thumb}
+                      alt=""
+                      width={1969}
+                      height={2600}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      style={{ objectPosition: cs.thumbPos ?? "center top" }}
+                    />
+                  </div>
                 )}
-              </div>
-              <h3 className="text-lg font-bold tracking-[-0.02em] mb-1 transition-colors" style={{ color: "var(--text-primary)" }}>
-                {cs.title}
-              </h3>
-              <p className="text-sm mb-3 font-semibold tracking-tight" style={{ color: "var(--accent)" }}>
-                {cs.subtitle}
-              </p>
-              <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--text-secondary)" }}>
-                {cs.outcome}
-              </p>
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div className="flex flex-wrap gap-2">
-                  {cs.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-[10px] px-2.5 py-1 rounded-full font-medium font-mono"
-                      style={{
-                        color: "color-mix(in srgb, var(--accent) 80%, transparent)",
-                        border: "1px solid color-mix(in srgb, var(--accent) 18%, transparent)",
-                        background: "color-mix(in srgb, var(--accent) 5%, transparent)",
-                      }}
-                    >
-                      {tag}
+
+                <div className={`p-6 sm:p-8 flex flex-col justify-between ${isFullWidth ? "w-full md:w-1/2 border-t md:border-t-0 md:border-l" : "w-full"
+                  }`} style={{ borderColor: "var(--border)" }}>
+                  <div>
+                    <div className="flex flex-wrap items-center gap-3 mb-4">
+                      <p className="text-[9px] sm:text-[10px] font-mono tracking-[0.2em] uppercase text-[var(--accent)]">
+                        {cs.eyebrow}
+                      </p>
+                      {cs.active && (
+                        <span className="text-[8px] sm:text-[9px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ background: "color-mix(in srgb, var(--accent) 12%, transparent)", color: "var(--accent)", border: "1px solid color-mix(in srgb, var(--accent) 25%, transparent)" }}>
+                          Active
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-serif font-bold tracking-tight mb-2 text-[var(--text-primary)] transition-colors duration-200 group-hover:text-[var(--accent)]">
+                      {cs.title}
+                    </h3>
+                    <p className="text-sm mb-4 font-semibold tracking-tight text-[var(--accent)]">
+                      {cs.subtitle}
+                    </p>
+                    <p className="text-sm leading-relaxed mb-6 text-[var(--text-secondary)]">
+                      {cs.outcome}
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap items-center justify-between gap-4 mt-auto">
+                    <div className="flex flex-wrap gap-2">
+                      {cs.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-[9px] px-2.5 py-1 rounded-full font-medium font-mono"
+                          style={{
+                            color: "var(--text-secondary)",
+                            border: "1px solid var(--border)",
+                            background: "color-mix(in srgb, var(--accent) 5%, transparent)",
+                          }}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <span className="text-xs font-mono font-semibold underline-offset-4 group-hover:underline text-[var(--accent)]">
+                      Read case study →
                     </span>
-                  ))}
+                  </div>
                 </div>
-                <span className="text-xs font-mono underline-offset-2 group-hover:underline" style={{ color: "var(--accent)" }}>
-                  Read case study →
-                </span>
-              </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
       </section>
 
       {/* ── By the numbers ───────────────────────────────── */}
-      <section className="max-w-[960px] mx-auto px-6 pb-20">
-        <div className="pt-16" style={{ borderTop: "1px solid var(--border)" }}>
-          <p className="text-[10px] font-mono tracking-[0.3em] uppercase mb-10" style={{ color: "var(--text-muted)" }}>
+      <section className="max-w-[920px] mx-auto px-6 pb-24">
+        <div className="pt-20 border-t" style={{ borderColor: "var(--border)" }}>
+          <p className="text-[10px] font-mono tracking-[0.3em] uppercase mb-10 text-[var(--text-muted)]">
             By the numbers
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {numbers.map((n) => (
-              <div key={n.stat}>
-                <p className="text-2xl font-bold tracking-tight mb-2" style={{ color: "var(--accent)" }}>
+              <div
+                key={n.stat}
+                className="p-6 rounded-2xl glass-card border flex flex-col justify-between min-h-[140px]"
+                style={{ borderColor: "var(--border)" }}
+              >
+                <p className="text-3xl sm:text-4xl font-serif font-bold tracking-tight text-[var(--accent)] mb-3">
                   {n.stat}
                 </p>
-                <p className="text-xs leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                <p className="text-xs sm:text-sm leading-relaxed text-[var(--text-secondary)]">
                   {n.context}
                 </p>
               </div>
@@ -227,40 +245,40 @@ export default function HomePage() {
       </section>
 
       {/* ── About ─────────────────────────────────────────── */}
-      <section id="about" className="max-w-[960px] mx-auto px-6 pb-20">
-        <div className="pt-16" style={{ borderTop: "1px solid var(--border)" }}>
-          <p className="text-[10px] font-mono tracking-[0.3em] uppercase mb-6" style={{ color: "var(--text-muted)" }}>
+      <section id="about" className="max-w-[920px] mx-auto px-6 pb-24">
+        <div className="pt-20 border-t" style={{ borderColor: "var(--border)" }}>
+          <p className="text-[10px] font-mono tracking-[0.3em] uppercase mb-10 text-[var(--text-muted)]">
             About
           </p>
-          <div className="grid sm:grid-cols-[1fr_180px] gap-10 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_260px] gap-12 items-start">
             <div>
-              <p className="text-base leading-[1.85] mb-4" style={{ color: "var(--text-secondary)" }}>
+              <p className="text-base sm:text-lg leading-[1.8] mb-6 text-[var(--text-secondary)]">
                 I'm a Senior UX Designer with 11 years of experience across enterprise SaaS, government platforms,
                 and consumer products. I've designed a multi-tenant health insurance platform for Fortune 500
                 clients including Cigna, a civic digital platform for Dubai Municipality, a complete
                 multi-platform product suite for Jet Airways, and a service platform for the Saudi Ministry
                 of Hajj and Umrah.
               </p>
-              <p className="text-base leading-[1.85] mb-4" style={{ color: "var(--text-secondary)" }}>
+              <p className="text-base sm:text-lg leading-[1.8] mb-6 text-[var(--text-secondary)]">
                 The thread across all of it: systems thinking, architectural decisions, and design that has
                 to work at scale. I don't just use AI as a tool. I've built the infrastructure that makes
                 AI useful for design teams. At Javelina I architected a design operating system with prompt
                 libraries and AI-assisted workflows that cut handoff time by 40%.
               </p>
-              <p className="text-base leading-[1.85]" style={{ color: "var(--text-secondary)" }}>
+              <p className="text-base sm:text-lg leading-[1.8] text-[var(--text-secondary)]">
                 Outside client work, I build. Under Blinkwiser I've shipped two AI-powered SaaS products
                 independently. I started as the sole designer at Javelina and grew into leading a team of
                 four. I sit at the intersection of design, product thinking, and engineering, and that's
                 where the most interesting problems live.
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-10 flex flex-wrap gap-4">
                 <a
                   href="/Sikandar_Ali_Resume.pdf"
                   download="Sikandar_Ali_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold font-mono uppercase tracking-wider transition-all duration-300 hover:scale-[1.03]"
                   style={{ background: "var(--text-primary)", color: "var(--bg-base)" }}
                 >
                   Download Resume ↓
@@ -269,8 +287,8 @@ export default function HomePage() {
                   href="https://www.linkedin.com/in/sikandar-ux"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200"
-                  style={{ border: "1px solid var(--border)", color: "var(--text-secondary)" }}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold font-mono tracking-wider transition-all duration-300 hover:scale-[1.03] border hover:bg-[var(--bg-surface)] text-[var(--text-primary)]"
+                  style={{ borderColor: "var(--border)" }}
                 >
                   LinkedIn ↗
                 </a>
@@ -278,36 +296,36 @@ export default function HomePage() {
             </div>
 
             {/* Photo */}
-            <div className="w-full aspect-square rounded-xl overflow-hidden" style={{ border: "1px solid var(--border)" }}>
+            <div className="w-full max-w-[260px] mx-auto md:ml-auto aspect-square rounded-2xl overflow-hidden border shadow-md" style={{ borderColor: "var(--border)" }}>
               <Image
                 src="/img/1765377096878.jpeg"
                 alt="Sikandar Ali Abdul"
                 width={600}
                 height={600}
-                className="w-full h-full object-cover object-top"
+                className="w-full h-full object-cover object-top hover:scale-[1.03] transition-transform duration-500"
               />
             </div>
           </div>
 
           {/* Key facts */}
-          <div className="mt-12 pt-8" style={{ borderTop: "1px solid var(--border)" }}>
-            <p className="text-[10px] font-mono tracking-[0.25em] uppercase mb-6" style={{ color: "var(--text-muted)" }}>
+          <div className="mt-20 pt-12 border-t" style={{ borderColor: "var(--border)" }}>
+            <p className="text-[10px] font-mono tracking-[0.25em] uppercase mb-8 text-[var(--text-muted)]">
               Key Facts
             </p>
-            <div className="flex flex-col">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2">
               {keyFacts.map(({ label, value }) => (
                 <div
                   key={label}
-                  className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6 py-3"
-                  style={{ borderBottom: "1px solid var(--border)" }}
+                  className="flex justify-between items-center py-4 border-b text-[var(--text-secondary)]"
+                  style={{ borderColor: "var(--border)" }}
                 >
                   <span
-                    className="text-[10px] font-mono uppercase tracking-widest min-w-[90px]"
+                    className="text-[9px] sm:text-[10px] font-mono uppercase tracking-widest"
                     style={{ color: "var(--text-muted)" }}
                   >
                     {label}
                   </span>
-                  <span className="text-sm font-medium" style={{ color: "var(--text-primary)" }}>
+                  <span className="text-xs sm:text-sm font-semibold text-[var(--text-primary)] text-right">
                     {value}
                   </span>
                 </div>
@@ -318,27 +336,30 @@ export default function HomePage() {
       </section>
 
       {/* ── What I Bring ─────────────────────────────────── */}
-      <section id="services" className="max-w-[960px] mx-auto px-6 pb-20">
-        <div className="pt-16" style={{ borderTop: "1px solid var(--border)" }}>
-          <p className="text-[10px] font-mono tracking-[0.3em] uppercase mb-2" style={{ color: "var(--text-muted)" }}>
+      <section id="services" className="max-w-[920px] mx-auto px-6 pb-24">
+        <div className="pt-20 border-t" style={{ borderColor: "var(--border)" }}>
+          <p className="text-[10px] font-mono tracking-[0.3em] uppercase mb-2 text-[var(--text-muted)]">
             What I Bring
           </p>
-          <p className="text-xs mb-8" style={{ color: "var(--text-muted)" }}>
+          <p className="text-xs sm:text-sm mb-10 text-[var(--text-muted)]">
             Areas with a track record, not just an interest.
           </p>
-          <div className="grid sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {services.map((s) => (
               <div
                 key={s.title}
-                className="p-5 rounded-xl"
-                style={{ background: "var(--bg-surface)", border: "1px solid var(--border)" }}
+                className="p-6 rounded-2xl glass-card border flex flex-col justify-between min-h-[160px]"
+                style={{ borderColor: "var(--border)" }}
               >
-                <h3 className="text-sm font-semibold mb-2" style={{ color: "var(--text-primary)" }}>
-                  {s.title}
-                </h3>
-                <p className="text-xs leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-                  {s.desc}
-                </p>
+                <div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] mb-4" />
+                  <h3 className="text-base font-serif font-bold mb-3 text-[var(--text-primary)]">
+                    {s.title}
+                  </h3>
+                  <p className="text-xs leading-relaxed text-[var(--text-secondary)]">
+                    {s.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -346,35 +367,40 @@ export default function HomePage() {
       </section>
 
       {/* ── Contact ───────────────────────────────────────── */}
-      <section id="contact" className="max-w-[960px] mx-auto px-6 pb-20">
-        <div className="pt-16" style={{ borderTop: "1px solid var(--border)" }}>
-          <p className="text-[10px] font-mono tracking-[0.3em] uppercase mb-4" style={{ color: "var(--text-muted)" }}>
-            Contact
-          </p>
-          <h2 className="text-2xl font-bold tracking-[-0.02em] mb-4" style={{ color: "var(--text-primary)" }}>
-            Let's talk.
-          </h2>
-          <p className="text-base leading-[1.8] mb-8 max-w-[520px]" style={{ color: "var(--text-secondary)" }}>
-            Open to senior and lead UX roles in the Gulf, Singapore, and remote, particularly enterprise SaaS,
-            fintech, government, and regulated industries. Usually responds within 24 hours.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <a
-              href="mailto:ali050786@gmail.com"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200"
-              style={{ background: "var(--text-primary)", color: "var(--bg-base)" }}
-            >
-              Email me
-            </a>
-            <a
-              href="https://www.linkedin.com/in/sikandar-ux"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200"
-              style={{ border: "1px solid var(--border)", color: "var(--text-secondary)" }}
-            >
-              LinkedIn ↗
-            </a>
+      <section id="contact" className="max-w-[920px] mx-auto px-6 pb-24">
+        <div className="pt-20 border-t animate-fade-in" style={{ borderColor: "var(--border)" }}>
+          <div className="p-8 sm:p-12 rounded-3xl glass-card border relative overflow-hidden" style={{ borderColor: "var(--border)" }}>
+            {/* Soft accent ambient glow inside contact box */}
+            <div className="absolute -right-20 -bottom-20 w-52 h-52 rounded-full bg-[var(--accent)] opacity-10 filter blur-3xl pointer-events-none" />
+
+            <p className="text-[10px] font-mono tracking-[0.3em] uppercase mb-4 text-[var(--text-muted)]">
+              Contact
+            </p>
+            <h2 className="text-3xl sm:text-5xl font-serif font-bold tracking-tight mb-4 text-[var(--text-primary)]">
+              Let's talk.
+            </h2>
+            <p className="text-base sm:text-lg leading-[1.8] mb-8 max-w-[580px] text-[var(--text-secondary)]">
+              Open to senior and lead UX roles in the Gulf, India, Singapore, and remote, particularly enterprise SaaS,
+              fintech, government, and regulated industries. Usually responds within 24 hours.
+            </p>
+            <div className="flex flex-wrap gap-4 relative z-10">
+              <a
+                href="mailto:ali050786@gmail.com"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold font-mono uppercase tracking-wider transition-all duration-300 hover:scale-[1.03]"
+                style={{ background: "var(--accent)", color: "#000" }}
+              >
+                Email me
+              </a>
+              <a
+                href="https://www.linkedin.com/in/sikandar-ux"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold font-mono tracking-wider transition-all duration-300 hover:scale-[1.03] border hover:bg-[var(--bg-surface)] text-[var(--text-primary)]"
+                style={{ borderColor: "var(--border)" }}
+              >
+                LinkedIn ↗
+              </a>
+            </div>
           </div>
         </div>
       </section>

@@ -2,12 +2,12 @@
 
 export default function Footer() {
   return (
-    <footer style={{ borderTop: "1px solid var(--border)" }} className="mt-24 py-10">
-      <div className="max-w-[960px] mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-        <p className="text-xs font-mono tracking-widest uppercase" style={{ color: "var(--text-muted)" }}>
+    <footer className="mt-32 py-12 border-t" style={{ borderColor: "var(--border)" }}>
+      <div className="max-w-[920px] mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <p className="text-[10px] font-mono tracking-widest uppercase text-[var(--text-muted)]">
           © 2026 Sikandar Ali Abdul
         </p>
-        <div className="flex gap-6 text-xs font-mono uppercase tracking-widest">
+        <div className="flex gap-6 text-[10px] font-mono uppercase tracking-widest">
           {[
             { label: "Resume", href: "/Sikandar_Ali_Resume.pdf", download: "Sikandar_Ali_Resume.pdf", external: false },
             { label: "Email", href: "mailto:ali050786@gmail.com", external: false },
@@ -18,10 +18,7 @@ export default function Footer() {
               href={href}
               {...(download ? { download } : {})}
               {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-              className="transition-colors"
-              style={{ color: "var(--text-secondary)" }}
-              onMouseEnter={e => (e.currentTarget.style.color = "var(--accent)")}
-              onMouseLeave={e => (e.currentTarget.style.color = "var(--text-secondary)")}
+              className="transition-colors duration-200 text-[var(--text-secondary)] hover:text-[var(--accent)] font-semibold"
             >
               {label}
             </a>

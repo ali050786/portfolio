@@ -6,15 +6,11 @@ export default function SubHeader() {
   }
 
   return (
-    <div
-      className="w-full"
-      style={{
-        borderBottom: "1px solid var(--border)",
-        background: "color-mix(in srgb, var(--bg-surface) 80%, transparent)",
-      }}
-    >
-      <div className="max-w-[960px] mx-auto px-6 h-9 flex items-center justify-between gap-4">
-
+    <div className="w-full pt-20 pb-2">
+      <div
+        className="max-w-[920px] mx-auto px-6 h-10 flex items-center justify-between gap-4 border-b transition-colors duration-200"
+        style={{ borderColor: "var(--border)" }}
+      >
         {/* Canvas mode */}
         <a
           href="https://canvasportfolio.blinkwiser.com"
@@ -22,7 +18,7 @@ export default function SubHeader() {
           rel="noopener noreferrer"
           className="flex items-center gap-2 group transition-colors duration-200"
         >
-          <span className="text-[10px]" style={{ color: "var(--accent)" }}>✦</span>
+          <span className="text-[10px] animate-pulse" style={{ color: "var(--accent)" }}>✦</span>
           <span
             className="text-[10px] font-mono uppercase tracking-widest transition-colors duration-200"
             style={{ color: "var(--text-muted)" }}
@@ -40,9 +36,9 @@ export default function SubHeader() {
         {/* AI Chat trigger */}
         <button
           onClick={openChat}
-          className="flex items-center gap-2 transition-colors duration-200 group"
+          className="flex items-center gap-2 transition-colors duration-200 group cursor-pointer"
         >
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--text-muted)" }}>
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--text-muted)" }}>
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
           </svg>
           <span
@@ -54,7 +50,6 @@ export default function SubHeader() {
             Ask AI about my work
           </span>
         </button>
-
       </div>
     </div>
   );

@@ -25,123 +25,117 @@ export default function CaseStudyLayout({
 }: CaseStudyLayoutProps) {
   return (
     <>
-    <ReadingProgress />
-    <article className="max-w-[960px] mx-auto px-6 pt-12 pb-24">
-
-      {/* Back */}
-      <Link
-        href="/#work"
-        className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest mb-10 transition-colors font-semibold"
-        style={{ color: "var(--text-secondary)" }}
-        onMouseEnter={e => (e.currentTarget.style.color = "var(--accent)")}
-        onMouseLeave={e => (e.currentTarget.style.color = "var(--text-secondary)")}
-      >
-        ← All work
-      </Link>
-
-      {/* Tags */}
-      <div className="flex flex-wrap gap-2 mb-5">
-        {tags.map((tag) => (
-          <span
-            key={tag}
-            className="text-[11px] px-2.5 py-1 rounded-full font-medium"
-            style={{
-              color: "color-mix(in srgb, var(--accent) 90%, transparent)",
-              border: "1px solid color-mix(in srgb, var(--accent) 20%, transparent)",
-              background: "color-mix(in srgb, var(--accent) 6%, transparent)",
-            }}
-          >
-            {tag}
-          </span>
-        ))}
-      </div>
-
-      {/* Title */}
-      <h1
-        className="text-3xl sm:text-4xl font-bold leading-[1.1] tracking-[-0.03em] mb-4"
-        style={{ color: "var(--text-primary)" }}
-      >
-        {title}
-      </h1>
-      <p className="text-base leading-[1.8] mb-8" style={{ color: "var(--text-secondary)" }}>
-        {subtitle}
-      </p>
-
-      {/* Meta row */}
-      <div
-        className="flex flex-wrap gap-6 text-xs mb-10 pb-8"
-        style={{ borderBottom: "1px solid var(--border)", color: "var(--text-secondary)" }}
-      >
-        <div>
-          <span
-            className="block font-mono uppercase tracking-widest mb-1"
-            style={{ color: "var(--text-muted)", fontSize: "9px" }}
-          >
-            Role
-          </span>
-          {role}
-        </div>
-        <div>
-          <span
-            className="block font-mono uppercase tracking-widest mb-1"
-            style={{ color: "var(--text-muted)", fontSize: "9px" }}
-          >
-            Timeline
-          </span>
-          {timeline}
-        </div>
-      </div>
-
-      {/* Metrics strip */}
-      {metrics.length > 0 && (
-        <div
-          className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12 p-6 rounded-xl"
-          style={{ background: "var(--bg-surface)", border: "1px solid var(--border)" }}
-        >
-          {metrics.map((m) => (
-            <div key={m.label}>
-              <p
-                className="text-2xl font-bold tracking-tight mb-1"
-                style={{ color: "var(--accent)" }}
-              >
-                {m.value}
-              </p>
-              <p className="text-[11px] leading-snug" style={{ color: "var(--text-muted)" }}>
-                {m.label}
-              </p>
-            </div>
-          ))}
-        </div>
-      )}
-
-      {/* Hero image */}
-      {heroImage && (
-        <div className="w-full rounded-xl overflow-hidden mb-12" style={{ border: "1px solid var(--border)" }}>
-          <Image
-            src={heroImage.src}
-            alt={heroImage.alt}
-            width={heroImage.width}
-            height={heroImage.height}
-            className="w-full h-auto"
-            priority
-          />
-        </div>
-      )}
-
-      {/* Body */}
-      <div className="prose-case">{children}</div>
-
-      {/* Bottom nav */}
-      <div className="mt-16 pt-8" style={{ borderTop: "1px solid var(--border)" }}>
+      <ReadingProgress />
+      <article className="max-w-[860px] mx-auto px-6 pt-16 pb-24">
+        {/* Back Button */}
         <Link
           href="/#work"
-          className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest transition-colors"
-          style={{ color: "var(--accent)" }}
+          className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest mb-10 transition-all duration-200 group text-[var(--text-secondary)] hover:text-[var(--accent)] font-semibold"
         >
-          ← Back to all work
+          <span className="transition-transform duration-200 group-hover:-translate-x-1" aria-hidden="true">←</span>
+          <span>All work</span>
         </Link>
-      </div>
-    </article>
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2 mb-6">
+          {tags.map((tag) => (
+            <span
+              key={tag}
+              className="text-[10px] sm:text-[11px] px-3.5 py-1 rounded-full font-medium font-mono"
+              style={{
+                color: "var(--accent)",
+                border: "1px solid var(--border)",
+                background: "color-mix(in srgb, var(--accent) 5%, transparent)",
+              }}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {/* Title */}
+        <h1
+          className="text-3xl sm:text-5xl font-serif font-bold leading-[1.1] tracking-[-0.02em] mb-5 text-[var(--text-primary)]"
+        >
+          {title}
+        </h1>
+        <p className="text-base sm:text-lg leading-[1.75] mb-10 text-[var(--text-secondary)] max-w-[760px]">
+          {subtitle}
+        </p>
+
+        {/* Meta Info Row */}
+        <div
+          className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-xs mb-12 pb-8 border-b text-[var(--text-secondary)]"
+          style={{ borderColor: "var(--border)" }}
+        >
+          <div>
+            <span
+              className="block font-mono uppercase tracking-widest mb-1 text-[9px]"
+              style={{ color: "var(--text-muted)" }}
+            >
+              Role
+            </span>
+            <span className="font-semibold text-[var(--text-primary)]">{role}</span>
+          </div>
+          <div>
+            <span
+              className="block font-mono uppercase tracking-widest mb-1 text-[9px]"
+              style={{ color: "var(--text-muted)" }}
+            >
+              Timeline
+            </span>
+            <span className="font-semibold text-[var(--text-primary)]">{timeline}</span>
+          </div>
+        </div>
+
+        {/* Metrics Grid */}
+        {metrics.length > 0 && (
+          <div
+            className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-16 p-6 rounded-2xl glass-card"
+          >
+            {metrics.map((m) => (
+              <div key={m.label} className="flex flex-col justify-between">
+                <p
+                  className="text-2xl sm:text-3xl font-serif font-bold tracking-tight mb-2 text-[var(--accent)]"
+                >
+                  {m.value}
+                </p>
+                <p className="text-[11px] sm:text-xs leading-snug text-[var(--text-secondary)]">
+                  {m.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Hero Image */}
+        {heroImage && (
+          <div className="w-full rounded-2xl overflow-hidden mb-16 shadow-lg border" style={{ borderColor: "var(--border)" }}>
+            <Image
+              src={heroImage.src}
+              alt={heroImage.alt}
+              width={heroImage.width}
+              height={heroImage.height}
+              className="w-full h-auto object-cover"
+              priority
+            />
+          </div>
+        )}
+
+        {/* Article Body */}
+        <div className="prose-case">{children}</div>
+
+        {/* Bottom Back Navigation */}
+        <div className="mt-20 pt-8 border-t" style={{ borderColor: "var(--border)" }}>
+          <Link
+            href="/#work"
+            className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest transition-all duration-200 group text-[var(--accent)] font-semibold"
+          >
+            <span className="transition-transform duration-200 group-hover:-translate-x-1" aria-hidden="true">←</span>
+            <span>Back to all work</span>
+          </Link>
+        </div>
+      </article>
     </>
   );
 }
