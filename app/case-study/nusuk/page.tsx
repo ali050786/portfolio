@@ -86,7 +86,7 @@ export default function NusukPage() {
             <p className="text-[10px] font-mono uppercase tracking-widest mb-3" style={{ color: "var(--accent)" }}>Primary path</p>
             {["Enter details", "Upload documents", "Confirm & pay", "Receive permit"].map((s, i) => (
               <div key={i} className="flex items-center gap-2 mb-2">
-                <span className="w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0" style={{ background: "var(--accent)", color: "#000" }}>{i + 1}</span>
+                <span className="w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold shrink-0" style={{ background: "var(--accent-btn)", color: "#000" }}>{i + 1}</span>
                 <span className="text-xs" style={{ color: "var(--text-primary)" }}>{s}</span>
               </div>
             ))}

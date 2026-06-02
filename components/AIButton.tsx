@@ -125,7 +125,7 @@ export default function AIButton({ onOpen }: { onOpen?: () => void }) {
               onClick={send}
               disabled={loading || !input.trim()}
               className="px-3 py-2 text-xs font-medium rounded-lg transition-colors disabled:opacity-40"
-              style={{ background: "var(--accent)", color: "#000" }}
+              style={{ background: "var(--accent-btn)", color: "#000" }}
             >
               →
             </button>

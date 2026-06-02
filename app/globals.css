@@ -16,6 +16,7 @@ html.dark {
   --accent:       #dfb75c;
   --accent-light: #f2d68c;
   --accent-dark:  #b58c35;
+  --accent-btn:   #dfb75c; /* always bright gold — black text = 10.6:1 contrast */
 
   --border:       rgba(255, 255, 255, 0.05);
   --border-hover: rgba(255, 255, 255, 0.12);
@@ -35,6 +36,7 @@ html.light {
   --accent:       #9d7c35;
   --accent-light: #bfa260;
   --accent-dark:  #75591e;
+  --accent-btn:   #c9a040; /* always bright gold — black text = 8.4:1 contrast */
 
   --border:       rgba(0, 0, 0, 0.06);
   --border-hover: rgba(0, 0, 0, 0.14);

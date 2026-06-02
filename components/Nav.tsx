@@ -500,7 +500,7 @@ export default function Nav() {
                   type="submit"
                   disabled={loading || !input.trim()}
                   className="px-4 py-2.5 text-xs font-semibold rounded-xl transition-all duration-200 disabled:opacity-40 cursor-pointer"
-                  style={{ background: "var(--accent)", color: "#000" }}
+                  style={{ background: "var(--accent-btn)", color: "#000" }}
                 >
                   Send
                 </button>
