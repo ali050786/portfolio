@@ -34,7 +34,7 @@ export default function DubaiPage() {
       <h2>The Problem</h2>
       <p>
         Dubai Municipality manages a large and varied portfolio of civic services for a city of
-        3.5 million residents, including building permit applications, environmental complaints, and public
+        3.5 million residents — building permit applications, environmental complaints, public
         facility bookings, waste management requests, and more. Residents interact with these
         services in Arabic and English, with different mental models, different reading directions,
         and different expectations of how a government platform should behave.
@@ -187,8 +187,7 @@ export default function DubaiPage() {
           Platform serves 3.5 million Dubai residents across the full portfolio of municipal services
         </li>
         <li>
-          Full bilingual experience delivered: English (LTR) and Arabic (RTL) designed simultaneously
-          to equal standards rather than retrofitted
+          Bilingual platform approved by Arabic-speaking stakeholders with no RTL rework required in development
         </li>
         <li>
           Information architecture mapped for the complete service portfolio before any visual work

@@ -88,19 +88,15 @@ export default function CaseStudyLayout({
           </div>
         </div>
 
-        {/* Metrics Grid */}
+        {/* Metrics Grid — large enough to anchor a 30-second skim */}
         {metrics.length > 0 && (
-          <div
-            className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-16 p-6 rounded-2xl glass-card"
-          >
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-px mb-16 rounded-2xl overflow-hidden border" style={{ borderColor: "var(--border)" }}>
             {metrics.map((m) => (
-              <div key={m.label} className="flex flex-col justify-between">
-                <p
-                  className="text-2xl sm:text-3xl font-serif font-bold tracking-tight mb-2 text-[var(--accent)]"
-                >
+              <div key={m.label} className="flex flex-col gap-2 p-6 sm:p-8 glass-card">
+                <p className="text-4xl sm:text-5xl font-serif font-bold tracking-tight leading-none text-[var(--accent)]">
                   {m.value}
                 </p>
-                <p className="text-[11px] sm:text-xs leading-snug text-[var(--text-secondary)]">
+                <p className="text-xs leading-snug text-[var(--text-secondary)] max-w-[140px]">
                   {m.label}
                 </p>
               </div>

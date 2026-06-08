@@ -50,7 +50,7 @@ const caseStudies = [
     title: "Designing and shipping AI products end-to-end.",
     subtitle: "Proof that I understand products from the inside.",
     outcome: "Two live AI SaaS tools: a carousel builder with active users and a LangChain-powered video course builder, designed, built, and shipped solo from concept to production.",
-    tags: ["AI SaaS", "Solo Founder", "End-to-End", "Shipped Product"],
+    tags: ["AI SaaS", "AI Products", "End-to-End", "Shipped Product"],
     thumb: "/img/blinkwiser/carousel-editor.png",
   },
 ];
@@ -261,7 +261,7 @@ export default function HomePage() {
               </p>
               <p className="text-base sm:text-lg leading-[1.8] mb-6 text-[var(--text-secondary)]">
                 The thread across all of it: systems thinking, architectural decisions, and design that has
-                to work at scale. I don't just use AI as a tool. I've built the infrastructure that makes
+                to work at scale. I've built the infrastructure that makes
                 AI useful for design teams. At Javelina I architected a design operating system with prompt
                 libraries and AI-assisted workflows that cut handoff time by 40%.
               </p>

@@ -63,9 +63,10 @@ export default function JetAirwaysPage() {
       </p>
       <p>
         The four-year tenure meant I was present for the full lifecycle of the digital product,
-        from the original iOS app through to the Apple Watch companion, the B2B portal, and
-        the ongoing web platform evolution. I wasn't a consultant brought in for a single
-        platform. I owned the design continuity across all of them.
+        from the original iOS app through to the Apple Watch companion — one of the first aviation
+        wearable experiences shipped in India — the B2B agent portal, and the ongoing web platform
+        evolution. I wasn't a consultant brought in for a single platform. I owned the design
+        continuity across all of them.
       </p>
 
       {/* KEY DECISIONS */}
@@ -167,16 +168,20 @@ export default function JetAirwaysPage() {
 
       <h3>Decision 4: Responsive web as the canonical design reference</h3>
       <p>
-        With six platforms, the question of which platform to design "first" had real consequences.
-        Designing mobile-first and scaling up meant desktop layouts were derived. Designing
-        desktop-first and scaling down meant mobile was always a compromise.
+        With six platforms, the question of which platform to design first had real consequences
+        for the most complex screens in the product. Aviation UX is information-dense: fare
+        comparison across multiple cabin classes, multi-passenger booking flows, and corporate
+        account management all involve layered data that needs space to breathe. Designing those
+        screens mobile-first would have meant solving them at the smallest, most constrained canvas
+        first. The desktop would then become an inflated mobile layout rather than an interface
+        that uses available space to genuinely reduce cognitive load.
       </p>
       <p>
-        We used responsive web as the canonical design reference, the platform that had to solve
-        the hardest content and layout problems across the widest range of viewports. Native iOS
-        and Android then adapted from this reference, taking what worked and applying the correct
-        platform conventions. This meant consistency wasn't enforced through constant cross-platform
-        review. It was built into the design process from the start.
+        Using responsive web as the canonical reference meant the hardest layout and content problems
+        were solved at full width first, where the information hierarchy could be established clearly.
+        Native iOS and Android then adapted from this reference, applying correct platform conventions
+        without compromising the underlying structure. Consistency wasn't enforced through constant
+        cross-platform review — it was built into the design process from the start.
       </p>
       <figure className="my-6">
         <div className="rounded-xl overflow-hidden border" style={{ borderColor: "var(--border)" }}>
@@ -197,26 +202,25 @@ export default function JetAirwaysPage() {
       <h2>Results</h2>
       <ul>
         <li>
-          iOS and Android apps shipped to App Store and Play Store, live in production from 2015
+          Jet Airways was India's second-largest airline at its peak, carrying approximately
+          22 million passengers annually. Every one of them interacted with at least one of
+          these platforms to book, check in, or manage their journey.
         </li>
         <li>
-          Apple Watch companion app shipped in 2015–2016, one of the earliest aviation wearable
-          experiences in India
+          The Apple Watch companion, shipped in 2015, was among the first aviation wearable
+          experiences in India. At the time, there was no industry template for what a watch
+          airline app should do — the interaction model was designed from first principles.
         </li>
         <li>
-          Responsive web platform and mobile web served passengers across the full viewport range
+          The B2B travel agent portal became the primary booking interface for travel agencies
+          and corporate accounts across India, managing bulk itineraries, multi-passenger
+          bookings, and corporate account oversight at scale.
         </li>
         <li>
-          B2B travel agent portal delivered a separate, efficiency-first interface for agency and
-          corporate booking management
-        </li>
-        <li>
-          All six platforms maintained visual consistency through the shared component library,
-          no platform felt like an afterthought
-        </li>
-        <li>
-          Every platform remained live and in active use until Jet Airways ceased operations in
-          April 2019. The closure was financial, not product-related.
+          Six platforms maintained visual and interaction consistency over four years through
+          a shared component library — with no formal design system documentation, no dedicated
+          design system team, and no platform that felt like an afterthought. That's an
+          operational achievement the component count alone doesn't capture.
         </li>
       </ul>
 
