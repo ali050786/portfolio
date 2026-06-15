@@ -3,9 +3,9 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Sikandar Ali Abdul | Senior UX Designer",
+  title: "Sikandar Ali Abdul | Senior UX Architect",
   description:
-    "Senior UX Designer with 11 years designing enterprise SaaS, government civic platforms, and consumer products across US, UAE, and India. Open to Gulf · India · Singapore · Remote.",
+    "Senior UX Architect with 11 years designing enterprise SaaS, government civic platforms, and consumer products across US, UAE, and India. Open to Gulf · India · Singapore · Remote.",
 };
 
 const caseStudies = [
@@ -104,7 +104,7 @@ export default function HomePage() {
         </h1>
 
         <h2 className="text-2xl sm:text-4xl font-light leading-[1.25] tracking-tight mb-8 text-[var(--text-secondary)]">
-          <span className="font-serif font-bold text-[var(--accent)]">Senior UX Designer</span>{" "}
+          <span className="font-serif font-bold text-[var(--accent)]">Senior UX Architect</span>{" "}
           who designs enterprise systems and builds AI products.
         </h2>
 
@@ -253,7 +253,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-[1fr_260px] gap-12 items-start">
             <div>
               <p className="text-base sm:text-lg leading-[1.8] mb-6 text-[var(--text-secondary)]">
-                I'm a Senior UX Designer with 11 years of experience across enterprise SaaS, government platforms,
+                I'm a Senior UX Architect with 11 years of experience across enterprise SaaS, government platforms,
                 and consumer products. I've designed a multi-tenant health insurance platform for Fortune 500
                 clients including Cigna, a civic digital platform for Dubai Municipality, a complete
                 multi-platform product suite for Jet Airways, and a service platform for the Saudi Ministry

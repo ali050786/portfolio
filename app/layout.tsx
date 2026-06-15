@@ -17,11 +17,11 @@ const serif = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Sikandar Ali Abdul — Senior UX Designer",
+  title: "Sikandar Ali Abdul — Senior UX Architect",
   description:
-    "Senior UX Designer with 11 years designing enterprise SaaS, government civic platforms, and consumer products across US, UAE, and India. Open to Gulf · India · Singapore · Remote.",
+    "Senior UX Architect with 11 years designing enterprise SaaS, government civic platforms, and consumer products across US, UAE, and India. Open to Gulf · India · Singapore · Remote.",
   openGraph: {
-    title: "Sikandar Ali Abdul — Senior UX Designer",
+    title: "Sikandar Ali Abdul — Senior UX Architect",
     description:
       "11 years designing enterprise systems at scale. Multi-tenant SaaS, government civic platforms, aviation UX.",
     url: "https://portfolio.blinkwiser.com",
@@ -32,13 +32,13 @@ export const metadata: Metadata = {
         url: "https://portfolio.blinkwiser.com/img/1765377096878.jpeg",
         width: 400,
         height: 400,
-        alt: "Sikandar Ali Abdul — Senior UX Designer",
+        alt: "Sikandar Ali Abdul — Senior UX Architect",
       },
     ],
   },
   twitter: {
     card: "summary",
-    title: "Sikandar Ali Abdul — Senior UX Designer",
+    title: "Sikandar Ali Abdul — Senior UX Architect",
     description: "11 years designing enterprise systems at scale. Multi-tenant SaaS, government civic platforms, aviation UX.",
     images: ["https://portfolio.blinkwiser.com/img/1765377096878.jpeg"],
   },

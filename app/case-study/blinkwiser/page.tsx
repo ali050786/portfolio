@@ -3,17 +3,17 @@ import Image from "next/image";
 import CaseStudyLayout from "@/components/CaseStudyLayout";
 
 export const metadata: Metadata = {
-  title: "Blinkwiser: AI SaaS, Solo Founder | Ali Abdul",
+  title: "Blinkwiser: Designing and Shipping AI Products | Ali Abdul",
   description:
-    "Designed and shipped two live AI SaaS products as a solo founder: Agentic Carousel (blinkwiser.com) and VidExtreme (courses.blinkwiser.com). End-to-end: research, UX, UI, build, deploy.",
+    "Designed and shipped two live AI SaaS products end-to-end: Agentic Carousel (blinkwiser.com) and VidExtreme (courses.blinkwiser.com). Research, UX, UI, build, deploy — all of it.",
 };
 
 export default function BlinkwiserPage() {
   return (
     <CaseStudyLayout
-      title="Blinkwiser: Designing and Shipping AI Products as a Solo Founder"
+      title="Blinkwiser: Designing and Shipping AI Products End-to-End"
       subtitle="Two live AI SaaS tools built from scratch: designed, coded, and shipped. This is what it looks like when a designer owns the entire product lifecycle."
-      tags={["AI SaaS", "Solo Founder", "End-to-End", "Shipped Product", "LangChain"]}
+      tags={["AI SaaS", "AI Products", "End-to-End", "Shipped Product", "LangChain"]}
       role="Sole Designer & Developer"
       timeline="2025 – Present"
       metrics={[

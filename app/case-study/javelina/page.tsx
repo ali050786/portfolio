@@ -4,7 +4,7 @@ import CaseStudyLayout from "@/components/CaseStudyLayout";
 import FigmaEmbed from "@/components/FigmaEmbed";
 
 export const metadata: Metadata = {
-  title: "Javelina: Founding UX Designer | Ali Abdul",
+  title: "Javelina: Senior UX Architect | Ali Abdul",
   description:
     "Built the UX practice from zero at Javelina. 120+ component design system and three-tier theming architecture cut new-client onboarding from weeks to under 24 hours. Clients: Cigna, Keenan, Bywater.",
 };
@@ -170,7 +170,7 @@ export default function JavelinaPage() {
         and eliminated a document upload step that could be deferred post-enrollment.
       </p>
       <p>
-        The result was 5 steps instead of 9, a 44% reduction in cognitive load at the most
+        The result was 5 steps instead of 9, a 44% reduction in enrollment steps at the most
         stressful moment of the member's interaction with the platform.
       </p>
       <figure className="my-6">
@@ -210,6 +210,13 @@ export default function JavelinaPage() {
         not built from scratch. This meant the mobile components were born already themed for each
         client, and design consistency across web and mobile was guaranteed rather than manually
         maintained.
+      </p>
+      <p>
+        The alternative — custom mobile-specific components built independently — would have created
+        a second theming system running in parallel. Every token change at the insurer level would
+        have needed to be applied twice: once to web, once to mobile, by hand, with no structural
+        guarantee they stayed in sync. Given that we were onboarding new clients under a 24-hour
+        deployment target, that maintenance burden would have broken the model entirely.
       </p>
       <figure className="my-6">
         <div className="rounded-xl overflow-hidden border" style={{ borderColor: "var(--border)" }}>
@@ -290,7 +297,7 @@ export default function JavelinaPage() {
           enabled by the token-based design system
         </li>
         <li>
-          Open Enrollment redesigned from 9 steps to 5, removing 44% of the cognitive steps at the
+          Open Enrollment redesigned from 9 steps to 5, removing 44% of enrollment steps at the
           highest-stakes moment in the member journey
         </li>
         <li>
@@ -320,9 +327,10 @@ export default function JavelinaPage() {
       <p>
         I'd push for user research earlier in the enrollment redesign. We made the 9→5 restructuring
         based on logical analysis of the flow and stakeholder input rather than observed user behaviour.
-        We got the right outcome, but it was partly luck. A round of usability testing on the original
-        flow would have given us evidence rather than conviction. In a regulated product context, that
-        distinction matters more than it does elsewhere.
+        We got the right outcome, but the case for it rested on analysis and conviction rather than
+        usability data — in a regulated product context, that's a gap worth closing before shipping.
+        A round of testing on the original flow would have given us evidence to stand behind, not just
+        a decision that turned out to be correct.
       </p>
       <p>
         I'd also document the design system rationale more thoroughly from the start. The token
