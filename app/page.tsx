@@ -123,11 +123,30 @@ export default function HomePage() {
             See my work ↓
           </a>
           <a
-            href="mailto:ali050786@gmail.com"
+            href="#contact"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold font-mono uppercase tracking-wider transition-all duration-300 hover:scale-[1.03] border hover:bg-[var(--bg-surface)] text-[var(--text-primary)]"
             style={{ borderColor: "var(--border)" }}
           >
             Get in touch
+          </a>
+        </div>
+
+        {/* Contact info visible upfront — no mail client required */}
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-1 mt-5">
+          <a
+            href="mailto:ali050786@gmail.com"
+            className="text-xs font-mono hover:underline transition-colors"
+            style={{ color: "var(--text-muted)" }}
+          >
+            ali050786@gmail.com
+          </a>
+          <span className="text-xs font-mono" style={{ color: "var(--border)" }}>·</span>
+          <a
+            href="tel:+917276060100"
+            className="text-xs font-mono hover:underline transition-colors"
+            style={{ color: "var(--text-muted)" }}
+          >
+            +91 72760 60100
           </a>
         </div>
       </section>
