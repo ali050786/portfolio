@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
+import { Plus_Jakarta_Sans, Playfair_Display, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -16,7 +16,14 @@ const serif = Playfair_Display({
   display: "swap",
 });
 
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://portfolio.blinkwiser.com"),
   title: "Sikandar Ali Abdul — Senior UX Architect",
   description:
     "Senior UX Architect with 11 years designing enterprise SaaS, government civic platforms, and consumer products across US, UAE, and India. Open to Gulf · India · Singapore · Remote.",
@@ -51,9 +58,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${sans.variable} ${serif.variable} font-sans`}>
+      <body className={`${sans.variable} ${serif.variable} ${mono.variable} font-sans`}>
+        <a href="#main" className="skip-link">Skip to content</a>
         <Nav />
-        <main className="pt-20 sm:pt-24">{children}</main>
+        <main id="main" className="pt-20 sm:pt-24">{children}</main>
         <Footer />
       </body>
     </html>

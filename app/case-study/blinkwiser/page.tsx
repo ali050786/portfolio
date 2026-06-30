@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: "Blinkwiser: Designing and Shipping AI Products | Ali Abdul",
   description:
     "Designed and shipped two live AI SaaS products end-to-end: Agentic Carousel (blinkwiser.com) and VidExtreme (courses.blinkwiser.com). Research, UX, UI, build, deploy — all of it.",
+  openGraph: {
+    title: "Blinkwiser: Designing and Shipping AI Products End-to-End",
+    description:
+      "Two live AI SaaS tools, designed, coded, and shipped solo. Proof that a designer can own the full product lifecycle, not just the Figma file.",
+    url: "https://portfolio.blinkwiser.com/case-study/blinkwiser",
+    type: "article",
+    images: [{ url: "/img/blinkwiser/carousel-editor.png", width: 2600, height: 1424, alt: "Agentic Carousel AI editor" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blinkwiser: Designing and Shipping AI Products End-to-End",
+    description: "Two live AI SaaS products, designed and built solo from concept to production.",
+    images: ["/img/blinkwiser/carousel-editor.png"],
+  },
 };
 
 export default function BlinkwiserPage() {

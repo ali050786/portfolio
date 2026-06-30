@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import ContactModal from "@/components/ContactModal";
 
 export const metadata: Metadata = {
   title: "Sikandar Ali Abdul | Senior UX Architect",
@@ -8,26 +9,27 @@ export const metadata: Metadata = {
     "Senior UX Architect with 11 years designing enterprise SaaS, government civic platforms, and consumer products across US, UAE, and India. Open to Gulf · India · Singapore · Remote.",
 };
 
+const flagship = {
+  slug: "javelina",
+  active: true,
+  thumbPos: "center 20%",
+  eyebrow: "Enterprise SaaS · US Health Insurance · 2021–Present",
+  title: "One platform. Multiple Fortune 500 clients.",
+  subtitle: "One design architecture that scales.",
+  outcome: "Founded the UX practice from zero. A 120+ component design system and AI-assisted workflows cut dev handoff time by 40% and new-client onboarding from weeks to under 24 hours. Clients: Cigna, Keenan, Bywater, Aptia.",
+  tags: ["Multi-Tenant", "Design Systems", "AI Workflows", "UX Leadership"],
+  thumb: "/img/javelina/branding_javelina.png",
+};
+
 const caseStudies = [
-  {
-    slug: "javelina",
-    active: true,
-    thumbPos: "center 20%",
-    eyebrow: "Enterprise SaaS · US Health Insurance · 2021–Present",
-    title: "One platform. Multiple Fortune 500 clients.",
-    subtitle: "One design architecture that scales.",
-    outcome: "Founded the UX practice from zero. 120+ component design system and AI-assisted workflows cut dev handoff time by 40% and new-client onboarding from weeks to under 24 hours.",
-    tags: ["Multi-Tenant", "Design Systems", "AI Workflows", "US Market"],
-    thumb: "/img/javelina/branding_javelina.png",
-  },
   {
     slug: "dubai-municipality",
     active: false,
     thumbPos: "center top",
     eyebrow: "Government Civic · UAE · 2020–2021",
     title: "Designing for 3.5 million residents.",
-    subtitle: "Bilingual civic UX that got approved after prior submissions were rejected.",
-    outcome: "Lead UX Designer onsite in Dubai. Full Arabic/English parity, designed both directions simultaneously and not retrofitted RTL.",
+    subtitle: "Bilingual civic UX, approved after prior submissions were rejected.",
+    outcome: "Lead UX Designer onsite in Dubai. Full Arabic/English parity, with both directions designed simultaneously, not retrofitted RTL.",
     tags: ["Government", "RTL / Bilingual", "Gulf Market"],
     thumb: "/img/dubai/Dubai-English-Arabic.png",
   },
@@ -37,8 +39,8 @@ const caseStudies = [
     thumbPos: "center top",
     eyebrow: "Consumer Aviation · India · 2015–2019",
     title: "Every consumer touchpoint. Every platform.",
-    subtitle: "One consistent experience across six.",
-    outcome: "Shipped production apps across desktop web, iOS, Android, Apple Watch, and a B2B travel agent portal for one of India's top 3 airlines.",
+    subtitle: "One consistent experience across six platforms.",
+    outcome: "Shipped production apps across desktop web, mobile web, iOS, Android, Apple Watch, and a B2B travel agent portal for one of India's top 3 airlines.",
     tags: ["Aviation", "iOS · Android · Web", "Apple Watch", "B2B + B2C"],
     thumb: "/img/jetairways/jetairways-1.png",
   },
@@ -122,32 +124,7 @@ export default function HomePage() {
           >
             See my work ↓
           </a>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs sm:text-sm font-semibold font-mono uppercase tracking-wider transition-all duration-300 hover:scale-[1.03] border hover:bg-[var(--bg-surface)] text-[var(--text-primary)]"
-            style={{ borderColor: "var(--border)" }}
-          >
-            Get in touch
-          </a>
-        </div>
-
-        {/* Contact info visible upfront — no mail client required */}
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-1 mt-5">
-          <a
-            href="mailto:ali050786@gmail.com"
-            className="text-xs font-mono hover:underline transition-colors"
-            style={{ color: "var(--text-muted)" }}
-          >
-            ali050786@gmail.com
-          </a>
-          <span className="text-xs font-mono" style={{ color: "var(--border)" }}>·</span>
-          <a
-            href="tel:+917276060100"
-            className="text-xs font-mono hover:underline transition-colors"
-            style={{ color: "var(--text-muted)" }}
-          >
-            +91 72760 60100
-          </a>
+          <ContactModal />
         </div>
       </section>
 
@@ -163,78 +140,102 @@ export default function HomePage() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {caseStudies.map((cs) => {
-            const isFullWidth = cs.active;
-            return (
-              <Link
-                key={cs.slug}
-                href={`/case-study/${cs.slug}`}
-                className={`group block rounded-2xl overflow-hidden glass-card transition-all duration-300 ${isFullWidth ? "md:col-span-2 flex flex-col md:flex-row items-stretch" : "flex flex-col"
-                  }`}
-              >
-                {/* Thumbnail */}
-                {cs.thumb && (
-                  <div className={`overflow-hidden relative border-b md:border-b-0 ${isFullWidth ? "w-full md:w-1/2 min-h-[260px]" : "w-full h-56"
-                    }`} style={{ borderColor: "var(--border)" }}>
-                    <Image
-                      src={cs.thumb}
-                      alt=""
-                      width={1969}
-                      height={2600}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                      style={{ objectPosition: cs.thumbPos ?? "center top" }}
-                    />
-                  </div>
-                )}
+        {/* Flagship — current role, given the most weight */}
+        <Link
+          href={`/case-study/${flagship.slug}`}
+          className="group block rounded-2xl overflow-hidden glass-card transition-all duration-300 flex flex-col md:flex-row items-stretch mb-8"
+        >
+          <div className="overflow-hidden relative border-b md:border-b-0 w-full md:w-1/2 min-h-[260px]" style={{ borderColor: "var(--border)" }}>
+            <Image
+              src={flagship.thumb}
+              alt=""
+              width={1969}
+              height={2600}
+              sizes="(max-width: 768px) 100vw, 460px"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              style={{ objectPosition: flagship.thumbPos }}
+            />
+          </div>
+          <div className="p-6 sm:p-8 flex flex-col justify-between w-full md:w-1/2 border-t md:border-t-0 md:border-l" style={{ borderColor: "var(--border)" }}>
+            <div>
+              <div className="flex flex-wrap items-center gap-3 mb-4">
+                <p className="text-[9px] sm:text-[10px] font-mono tracking-[0.2em] uppercase text-[var(--accent)]">{flagship.eyebrow}</p>
+                <span className="text-[8px] sm:text-[9px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ background: "color-mix(in srgb, var(--accent) 12%, transparent)", color: "var(--accent)", border: "1px solid color-mix(in srgb, var(--accent) 25%, transparent)" }}>
+                  Current role
+                </span>
+              </div>
+              <h3 className="text-xl sm:text-2xl font-serif font-bold tracking-tight mb-2 text-[var(--text-primary)] transition-colors duration-200 group-hover:text-[var(--accent)]">{flagship.title}</h3>
+              <p className="text-sm mb-4 font-semibold tracking-tight text-[var(--accent)]">{flagship.subtitle}</p>
+              <p className="text-sm leading-relaxed mb-6 text-[var(--text-secondary)]">{flagship.outcome}</p>
+            </div>
+            <div className="flex flex-wrap items-center justify-between gap-4 mt-auto">
+              <div className="flex flex-wrap gap-2">
+                {flagship.tags.map((tag) => (
+                  <span key={tag} className="text-[9px] px-2.5 py-1 rounded-full font-medium font-mono" style={{ color: "var(--text-secondary)", border: "1px solid var(--border)", background: "color-mix(in srgb, var(--accent) 5%, transparent)" }}>{tag}</span>
+                ))}
+              </div>
+              <span className="text-xs font-mono font-semibold underline-offset-4 group-hover:underline text-[var(--accent)]">Read case study →</span>
+            </div>
+          </div>
+        </Link>
 
-                <div className={`p-6 sm:p-8 flex flex-col justify-between ${isFullWidth ? "w-full md:w-1/2 border-t md:border-t-0 md:border-l" : "w-full"
-                  }`} style={{ borderColor: "var(--border)" }}>
-                  <div>
-                    <div className="flex flex-wrap items-center gap-3 mb-4">
-                      <p className="text-[9px] sm:text-[10px] font-mono tracking-[0.2em] uppercase text-[var(--accent)]">
-                        {cs.eyebrow}
-                      </p>
-                      {cs.active && (
-                        <span className="text-[8px] sm:text-[9px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ background: "color-mix(in srgb, var(--accent) 12%, transparent)", color: "var(--accent)", border: "1px solid color-mix(in srgb, var(--accent) 25%, transparent)" }}>
-                          Active
-                        </span>
-                      )}
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-serif font-bold tracking-tight mb-2 text-[var(--text-primary)] transition-colors duration-200 group-hover:text-[var(--accent)]">
-                      {cs.title}
-                    </h3>
-                    <p className="text-sm mb-4 font-semibold tracking-tight text-[var(--accent)]">
+        {/* Remaining work — uniform grid, all four surfaced equally */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {caseStudies.map((cs) => (
+            <Link
+              key={cs.slug}
+              href={`/case-study/${cs.slug}`}
+              className="group flex flex-col rounded-2xl overflow-hidden glass-card transition-all duration-300"
+            >
+              {/* Thumbnail, or a branded fallback when no screenshot exists yet */}
+              <div className="overflow-hidden relative border-b w-full h-52" style={{ borderColor: "var(--border)" }}>
+                {cs.thumb ? (
+                  <Image
+                    src={cs.thumb}
+                    alt=""
+                    width={1600}
+                    height={900}
+                    sizes="(max-width: 768px) 100vw, 440px"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    style={{ objectPosition: cs.thumbPos ?? "center top" }}
+                  />
+                ) : (
+                  <div
+                    className="w-full h-full flex items-end p-5"
+                    style={{ background: "linear-gradient(135deg, color-mix(in srgb, var(--accent) 18%, var(--bg-elevated)), var(--bg-surface))" }}
+                  >
+                    <span className="text-base sm:text-lg font-serif font-bold leading-snug text-[var(--text-primary)]">
                       {cs.subtitle}
-                    </p>
-                    <p className="text-sm leading-relaxed mb-6 text-[var(--text-secondary)]">
-                      {cs.outcome}
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap items-center justify-between gap-4 mt-auto">
-                    <div className="flex flex-wrap gap-2">
-                      {cs.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-[9px] px-2.5 py-1 rounded-full font-medium font-mono"
-                          style={{
-                            color: "var(--text-secondary)",
-                            border: "1px solid var(--border)",
-                            background: "color-mix(in srgb, var(--accent) 5%, transparent)",
-                          }}
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    <span className="text-xs font-mono font-semibold underline-offset-4 group-hover:underline text-[var(--accent)]">
-                      Read case study →
                     </span>
                   </div>
+                )}
+              </div>
+
+              <div className="p-6 sm:p-8 flex flex-col justify-between flex-1">
+                <div>
+                  <div className="flex flex-wrap items-center gap-3 mb-4">
+                    <p className="text-[9px] sm:text-[10px] font-mono tracking-[0.2em] uppercase text-[var(--accent)]">{cs.eyebrow}</p>
+                    {cs.active && (
+                      <span className="text-[8px] sm:text-[9px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ background: "color-mix(in srgb, var(--accent) 12%, transparent)", color: "var(--accent)", border: "1px solid color-mix(in srgb, var(--accent) 25%, transparent)" }}>
+                        Active
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-serif font-bold tracking-tight mb-2 text-[var(--text-primary)] transition-colors duration-200 group-hover:text-[var(--accent)]">{cs.title}</h3>
+                  <p className="text-sm mb-4 font-semibold tracking-tight text-[var(--accent)]">{cs.subtitle}</p>
+                  <p className="text-sm leading-relaxed mb-6 text-[var(--text-secondary)]">{cs.outcome}</p>
                 </div>
-              </Link>
-            );
-          })}
+                <div className="flex flex-wrap items-center justify-between gap-4 mt-auto">
+                  <div className="flex flex-wrap gap-2">
+                    {cs.tags.map((tag) => (
+                      <span key={tag} className="text-[9px] px-2.5 py-1 rounded-full font-medium font-mono" style={{ color: "var(--text-secondary)", border: "1px solid var(--border)", background: "color-mix(in srgb, var(--accent) 5%, transparent)" }}>{tag}</span>
+                    ))}
+                  </div>
+                  <span className="text-xs font-mono font-semibold underline-offset-4 group-hover:underline text-[var(--accent)]">Read case study →</span>
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 

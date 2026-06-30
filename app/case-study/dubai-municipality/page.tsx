@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: "Dubai Municipality: Civic UX for 3.5M Residents | Ali Abdul",
   description:
     "Designed a bilingual Arabic/English civic platform for Dubai Municipality serving 3.5 million residents. Worked onsite with senior UAE government stakeholders. Designs approved after prior submissions were rejected.",
+  openGraph: {
+    title: "Dubai Municipality: Civic UX for 3.5 Million Residents",
+    description:
+      "Bilingual Arabic/English civic platform, designed onsite in Dubai. Approved by senior UAE stakeholders after prior submissions were rejected.",
+    url: "https://portfolio.blinkwiser.com/case-study/dubai-municipality",
+    type: "article",
+    images: [{ url: "/img/dubai/Dubai-Dashboard.png", width: 1600, height: 900, alt: "Dubai Municipality civic services dashboard" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dubai Municipality: Civic UX for 3.5 Million Residents",
+    description: "Bilingual Arabic/English civic platform for the UAE. RTL designed first-class, not retrofitted.",
+    images: ["/img/dubai/Dubai-Dashboard.png"],
+  },
 };
 
 export default function DubaiPage() {

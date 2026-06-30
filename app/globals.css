@@ -69,7 +69,34 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.4s ease, color-0.4s ease;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Sticky nav is ~88px tall; offset in-page anchor targets so headings
+   aren't hidden underneath it when jumping to #work, TOC links, etc. */
+:where(section[id], h2[id], h3[id]) {
+  scroll-margin-top: 7rem;
+}
+
+/* ── Skip to content (keyboard / screen-reader access) ────────────────────── */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 60;
+  padding: 0.6rem 1rem;
+  border-radius: 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--accent-btn);
+  color: #000;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+  outline: 2px solid var(--text-primary);
+  outline-offset: 2px;
 }
 
 /* ── Mesh Background ──────────────────────────────────────────────────────── */
@@ -235,6 +262,20 @@ button:focus-visible {
 .prose-case a:hover {
   color: var(--accent);
   text-decoration-color: var(--accent-light);
+}
+
+/* ── Animations ───────────────────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in { animation: none; }
 }
 
 /* ── Placeholder image ────────────────────────────────────────────────────── */

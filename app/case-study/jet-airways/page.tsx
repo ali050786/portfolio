@@ -6,6 +6,20 @@ export const metadata: Metadata = {
   title: "Jet Airways: Multi-Platform Aviation UX | Ali Abdul",
   description:
     "Shipped production apps for Jet Airways across desktop web, iOS, Android, Apple Watch, and a B2B travel agent portal. All platforms live from 2015 to 2019.",
+  openGraph: {
+    title: "Jet Airways: Every Consumer Touchpoint for India's Premier Airline",
+    description:
+      "Six production platforms over four years: desktop web, mobile web, iOS, Android, Apple Watch, and a B2B travel agent portal, kept consistent through a shared component library.",
+    url: "https://portfolio.blinkwiser.com/case-study/jet-airways",
+    type: "article",
+    images: [{ url: "/img/jetairways/jetairways-1.png", width: 1200, height: 900, alt: "Jet Airways multi-platform UX" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jet Airways: Every Consumer Touchpoint for India's Premier Airline",
+    description: "Six production platforms, four years, one consistent experience, including a 2015 Apple Watch app.",
+    images: ["/img/jetairways/jetairways-1.png"],
+  },
 };
 
 export default function JetAirwaysPage() {

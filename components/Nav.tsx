@@ -203,7 +203,7 @@ export default function Nav() {
   return (
     <header
       ref={menuRef}
-      className="sticky top-4 z-45 w-full px-4 sm:px-6 pointer-events-none"
+      className="sticky top-4 z-50 w-full px-4 sm:px-6 pointer-events-none"
     >
       <div
         className="max-w-[920px] mx-auto rounded-2xl border backdrop-blur-md shadow-lg transition-all duration-300 pointer-events-auto overflow-hidden flex flex-col"

@@ -7,6 +7,20 @@ export const metadata: Metadata = {
   title: "Javelina: Senior UX Architect | Ali Abdul",
   description:
     "Built the UX practice from zero at Javelina. 120+ component design system and three-tier theming architecture cut new-client onboarding from weeks to under 24 hours. Clients: Cigna, Keenan, Bywater.",
+  openGraph: {
+    title: "Javelina: Building an Enterprise Health Platform from Zero",
+    description:
+      "Founding designer → UX Lead. A 120+ component design system and AI-assisted workflows cut new-client onboarding from weeks to under 24 hours and dev handoff by 40%.",
+    url: "https://portfolio.blinkwiser.com/case-study/javelina",
+    type: "article",
+    images: [{ url: "/img/javelina/Cover.jpg", width: 1456, height: 816, alt: "Javelina enterprise health platform" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Javelina: Building an Enterprise Health Platform from Zero",
+    description: "120+ component design system, <24h client onboarding, −40% dev handoff via AI workflows.",
+    images: ["/img/javelina/Cover.jpg"],
+  },
 };
 
 export default function JavelinaPage() {

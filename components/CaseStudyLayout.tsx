@@ -1,6 +1,7 @@
 "use client";
 
 import ReadingProgress from "./ReadingProgress";
+import TableOfContents from "./TableOfContents";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -65,7 +66,7 @@ export default function CaseStudyLayout({
 
         {/* Meta Info Row */}
         <div
-          className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-xs mb-12 pb-8 border-b text-[var(--text-secondary)]"
+          className="grid grid-cols-2 gap-6 text-xs mb-12 pb-8 border-b text-[var(--text-secondary)] max-w-md"
           style={{ borderColor: "var(--border)" }}
         >
           <div>
@@ -117,6 +118,9 @@ export default function CaseStudyLayout({
             />
           </div>
         )}
+
+        {/* In-page navigation, built from the article's section headings */}
+        <TableOfContents />
 
         {/* Article Body */}
         <div className="prose-case">{children}</div>
